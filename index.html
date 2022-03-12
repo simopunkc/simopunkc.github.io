@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="id">
+<head>
+    <title>Simopunkc Site on Github</title>
+    <meta content="text/html; charset=UTF-8" http-eequiv="Content-Type" />
+    <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport" />
+    <meta content="#ffffff" name="theme-color" />
+    <style>
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            word-wrap: break-word;
+            font-size: 13px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: dimgray;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        input[type="checkbox"] {
+            -webkit-appearance: checkbox;
+            -moz-appearance: checkbox;
+        }
+
+        input[type="radio"] {
+            -webkit-appearance: radio;
+            -moz-appearance: radio;
+        }
+
+        select {
+            border-radius: 0;
+        }
+
+        input[type="button"],
+        input[type="submit"],
+        button,
+        select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: #167ac6;
+        }
+
+        a:hover {
+            color: orange;
+        }
+
+        #wrapper_600 {
+            width: 100%;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .padding10_15 {
+            padding: 10px 15px;
+        }
+
+        .lineheight19 {
+            line-height: 19px;
+        }
+
+        .text_left {
+            text-align: left;
+        }
+
+        .text_right {
+            text-align: right;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .blog-pager {
+            background-color: #fff;
+            color: #7a889d;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .blog_pager_inactive {
+            background-color: lightblue;
+        }
+
+        .blog_pager_active {
+            background-color: lavender;
+        }
+
+        .blog-pager span {
+            color: white;
+            margin: 7px;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 2px;
+        }
+
+        .blog_pager_inactive:hover {
+            background-color: lavender;
+            cursor: pointer;
+        }
+
+        .search_projek {
+            border: none;
+            margin-bottom: 10px;
+            padding: 7px 10px;
+        }
+
+        .loader {
+            background-color: #fff;
+            color: #444;
+            margin-bottom: 10px;
+            padding: 50px 0;
+        }
+
+        @media only screen and (min-width: 1000px) {
+            .projek {
+                max-width: calc((100% / 3) - 10px);
+                margin: 0 5px 10px;
+                float: left;
+            }
+
+            .projek {
+                width: 100%;
+            }
+
+            table.home_thread {
+                padding: 0 5px;
+            }
+
+            .blog-pager {
+                width: calc(100% - 10);
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            .deskripsi_projek {
+                border-radius: 50%;
+            }
+
+            .deskripsi_projek:hover {
+                border-radius: 0%;
+            }
+
+            .gambar_projek img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .projek {
+                max-width: unset;
+                margin: 0 0 10px 0;
+                float: unset;
+            }
+
+            .projek {
+                width: unset;
+            }
+
+            table.home_thread {
+                padding: unset;
+            }
+
+            .blog-pager {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .deskripsi_projek {
+                border-radius: unset;
+            }
+
+            .gambar_projek img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .projek {
+            color: #444;
+        }
+
+        .judul_projek {
+            background-color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .bungkus_projek {
+            background-color: #fcfce6;
+            border-bottom: 1px solid #eee;
+            border-top: 1px solid #eee;
+            padding: 10px;
+        }
+
+        .lihat_projek {
+            background-color: rosybrown;
+        }
+
+        .lihat_projek:hover {
+            background-color: grey;
+        }
+
+        .lihat_projek a:hover {
+            color: lightblue;
+        }
+
+        .lihat_projek a:link,
+        .lihat_projek a:visited {
+            color: #fff;
+            display: block;
+            padding: 5px;
+        }
+
+        .gambar_projek {
+            margin: 0 auto 10px;
+        }
+
+        .gambar_projek>div {
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .deskripsi_projek {
+            max-width: 120px;
+            max-height: 120px;
+            background-color: antiquewhite;
+        }
+
+        .gambar_projek img {
+            object-fit: contain;
+        }
+
+        .gambar_projek img:hover {
+            object-fit: none;
+        }
+
+        .default_gambar {
+            width: 120px;
+            height: 120px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        tr:nth-child(2n + 1) {
+            background-color: #fcfce6;
+        }
+
+        tr:nth-child(2n) {
+            background-color: #fcfcf6;
+        }
+
+        table.home_thread {
+            border: none;
+            border-spacing: 0;
+            vertical-align: middle;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        table.home_thread th {
+            background-color: #fff;
+            font-size: 12px;
+            color: #444;
+            padding: 10px 15px;
+        }
+
+        table.home_thread td {
+            border-top: 1px solid #e6e9ed;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-art" class="bungkus">
+        <div id="wrapper_600">
+            <table class="home_thread">
+                <thead class="text_left">
+                    <tr>
+                        <th>
+                            <div class="left">Portfolio</div>
+                            <div class="right">Halo, anonymous</div>
+                            <div class="clear"></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="artikel_block1">
+                    <tr class="text-left">
+                        <td>
+                            <div class="lineheight19 padding10_15">
+                                Selamat datang di halaman portofolio<br />Halaman ini berisi
+                                tentang berbagai macam projek yang telah selesai dikerjakan
+                                oleh <i>Budiyanto Simo</i>. Pengalaman membuat desain website
+                                sudah dimulai sejak tahun 2012. Sedangkan pengalaman menjadi
+                                fullstack web developer sudah dimulai sejak tahun 2016. Tidak
+                                semua projek dapat ditulis di halaman ini, karena hilangnya
+                                data yang saya alami pada awal tahun 2016.
+                                <div class="text_right">[<a href="https://pasuh.com/member/1/" title="Forums" target="_blank"> Profile </a>]</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="home_thread">
+                <thead class="text_left">
+                    <tr>
+                        <th>
+                            Tertarik menggunakan keahlian saya? Jangan ragu untuk
+                            menghubungi saya
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="artikel_block3">
+                    <tr class="text-left">
+                        <td>
+                            <span class="block padding10_15">Email:
+                                <a href="mailto:admin@pasuh.com" title="email"rel="nofollow">admin@pasuh.com</a></span>
+                        </td>
+                    </tr>
+                    <tr class="text-left">
+                        <td>
+                            <span class="block padding10_15">Whatsapp: +62 856 551 856 51</span>
+                        </td>
+                    </tr>
+                    <tr class="text-left">
+                        <td>
+                            <span class="block padding10_15">Telegram: @simopunkc</span>
+                        </td>
+                    </tr>
+                    <tr class="text-left">
+                        <td>
+                            <span class="block padding10_15">Facebook:
+                                <a href="https://www.facebook.com/simopunkc" title="Facebook"
+                                    rel="nofollow noopener">https://www.facebook.com/simopunkc</a></span>
+                        </td>
+                    </tr>
+                    <tr class="text-left">
+                        <td>
+                            <span class="block padding10_15">Linkedin:
+                                <a href="https://www.linkedin.com/in/simopunkc/" title="Linkedin"
+                                    rel="nofollow noopener">https://www.linkedin.com/in/simopunkc/</a></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
